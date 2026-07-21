@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#d9a66d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Next Chapter">
+<title>The Next Chapter — Allison & Brian</title>
+<style>
+:root{
+  --ink:#17324a; --ink2:#254a61; --muted:#5d7282; --cream:#fffaf2;
+  --glass:rgba(255,255,255,.62); --glass2:rgba(255,255,255,.78);
+  --line:rgba(255,255,255,.66); --shadow:0 25px 80px rgba(18,44,64,.22);
+  --warm:#ec9f5f; --gold:#f6cb7b; --sky:#9fc8df; --sage:#8ca996;
+  --bg1:#f6c98f; --bg2:#a9c9da; --bg3:#58798b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden; color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:linear-gradient(160deg,var(--bg1),var(--bg2) 45%,var(--bg3));
+}
+body.spring{--bg1:#f7c5b0;--bg2:#b9d9cf;--bg3:#6f9094}
+body.summer{--bg1:#ffd08a;--bg2:#a7d3e6;--bg3:#4f7f98}
+body.autumn{--bg1:#eeb778;--bg2:#c99b73;--bg3:#6c5660}
+body.winter{--bg1:#dfe9f3;--bg2:#a9bed3;--bg3:#63788d}
+
+.scene{position:fixed;inset:0;z-index:-3;overflow:hidden}
+.sun{
+  position:absolute; width:280px; height:280px; border-radius:50%;
+  left:50%; top:68px; transform:translateX(-50%);
+  background:radial-gradient(circle,#fff8d4 0%,#ffd887 38%,rgba(255,208,120,.18) 68%,transparent 72%);
+  filter:drop-shadow(0 0 38px rgba(255,225,155,.55));
+  animation:sunPulse 9s ease-in-out infinite;
+}
+@keyframes sunPulse{50%{transform:translateX(-50%) scale(1.045);opacity:.9}}
+.cloud{position:absolute;width:220px;height:54px;border-radius:999px;background:rgba(255,255,255,.32);filter:blur(.3px)}
+.cloud:before,.cloud:after{content:"";position:absolute;background:inherit;border-radius:50%}
+.cloud:before{width:84px;height:84px;left:34px;top:-28px}.cloud:after{width:110px;height:110px;right:30px;top:-47px}
+.c1{top:130px;left:-260px;animation:drift 42s linear infinite}
+.c2{top:230px;left:-340px;transform:scale(.72);opacity:.7;animation:drift 58s linear 8s infinite}
+@keyframes drift{to{left:110vw}}
+.mountains{position:absolute;inset:0;background:
+linear-gradient(to bottom,transparent 0 58%,rgba(26,57,71,.08) 58%),
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpath d='M0 700 L240 470 L420 650 L650 330 L840 610 L1060 390 L1260 590 L1440 410 L1600 620 L1600 900 L0 900 Z' fill='%23466070' fill-opacity='.48'/%3E%3Cpath d='M0 790 L220 620 L420 720 L650 500 L850 730 L1120 540 L1330 700 L1500 590 L1600 720 L1600 900 L0 900 Z' fill='%23354f5c' fill-opacity='.50'/%3E%3Cpath d='M0 850 C300 760 520 820 800 760 C1080 700 1330 790 1600 730 L1600 900 L0 900 Z' fill='%232a4552' fill-opacity='.38'/%3E%3C/svg%3E") center bottom/cover no-repeat}
+.sparkle{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 0 10px #fff;animation:twinkle 4s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.5)}}
+
+.shell{width:min(1180px,calc(100% - 28px));margin:auto;padding:42px 0 76px}
+.hero{text-align:center;padding:32px 20px 26px}
+.eyebrow{text-transform:uppercase;letter-spacing:.30em;font-size:.74rem;font-weight:900;color:#38546a}
+h1{font-family:Georgia,serif;font-size:clamp(3.7rem,8vw,7.3rem);line-height:.9;letter-spacing:-.045em;margin:12px 0 0;text-shadow:0 3px 22px rgba(255,255,255,.36)}
+.subtitle{max-width:720px;margin:20px auto 0;font-size:clamp(1rem,2vw,1.25rem);line-height:1.55;color:#355066}
+.pill{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.75);backdrop-filter:blur(18px);font-weight:850;box-shadow:0 10px 26px rgba(27,53,70,.12)}
+.actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:18px}
+button{border:0;border-radius:999px;padding:12px 18px;font:inherit;font-weight:850;cursor:pointer;transition:.2s ease}
+button:hover{transform:translateY(-2px)} .primary{background:var(--ink);color:#fff}.secondary{background:rgba(255,255,255,.72);color:var(--ink)}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stage{padding:24px;overflow:hidden;position:relative}
+.stage:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-60px;top:-70px;background:radial-gradient(circle,rgba(246,203,123,.52),transparent 68%)}
+.stage-top{display:flex;justify-content:space-between;gap:16px}
+.label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#a55f36;font-weight:950}
+.stage h2,.section-title,.journey h3{font-family:Georgia,serif}
+.stage h2{font-size:clamp(1.8rem,3vw,2.45rem);line-height:1.03;margin:6px 0}
+.range{color:var(--muted);font-weight:650;font-size:.92rem}
+.status{height:max-content;padding:8px 11px;border-radius:999px;background:rgba(246,203,123,.40);font-size:.73rem;font-weight:900;color:#73452c}
+.countdown{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.unit{padding:20px 10px 17px;border-radius:20px;text-align:center;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.75)}
+.num{font-family:Georgia,serif;font-size:clamp(2.4rem,5vw,4.1rem);line-height:1}
+.unit span{display:block;margin-top:8px;font-size:.68rem;letter-spacing:.14em;font-weight:900;color:#607383}
+.journey{margin-top:18px;padding:28px;display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:center}
+.ring{--p:0;width:190px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;position:relative;margin:auto;background:conic-gradient(var(--ink) calc(var(--p)*1%),rgba(255,255,255,.42) 0);box-shadow:0 16px 50px rgba(17,47,68,.18)}
+.ring:before{content:"";position:absolute;inset:14px;border-radius:50%;background:rgba(255,251,244,.94)}
+.ring-copy{position:relative;text-align:center}.ring-value{font-family:Georgia,serif;font-size:2.7rem}.ring-label{font-size:.66rem;letter-spacing:.14em;font-weight:900;color:var(--muted);margin-top:7px}
+.journey h3,.section-title{font-size:2rem;margin:0 0 8px}.journey p{color:var(--muted);line-height:1.55;margin:0}.bar{height:11px;border-radius:999px;background:rgba(255,255,255,.52);margin:18px 0 20px;overflow:hidden}.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--warm),var(--gold),var(--sky));border-radius:999px;transition:width 1s ease}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat strong{display:block;font-family:Georgia,serif;font-size:1.65rem}.stat span{font-size:.78rem;color:var(--muted);font-weight:700}
+.lower{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:18px}.panel{padding:26px}
+.quote{font-family:Georgia,serif;font-size:clamp(1.45rem,3vw,2.2rem);line-height:1.35;margin:6px 0 12px}.quote-author{color:var(--muted);font-weight:700}
+.dreams{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.dream,.milestone,.bucket-item{background:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.72);border-radius:20px;padding:16px}
+.dream .icon{font-size:1.7rem}.dream strong{display:block;margin-top:10px}.dream span,.milestone span{font-size:.82rem;color:var(--muted);line-height:1.4;display:block;margin-top:5px}
+.milestone-list,.bucket-list{display:grid;gap:11px;margin-top:18px}.milestone{display:flex;align-items:center;gap:12px;padding:13px}.dot{width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(246,203,123,.22);flex:0 0 auto}
+.bucket{margin-top:18px}.bucket-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.bucket-add{padding:9px 13px;background:rgba(255,255,255,.7);color:var(--ink)}
+.bucket-item{display:flex;align-items:center;gap:12px;padding:13px}.bucket-item input{width:18px;height:18px;accent-color:var(--ink)}.bucket-item.done .bucket-text{text-decoration:line-through;opacity:.55}
+.footer{text-align:center;color:rgba(25,50,71,.76);font-size:.78rem;margin-top:22px}
+.celebration{position:fixed;inset:0;z-index:40;display:none;place-items:center;text-align:center;padding:26px;background:radial-gradient(circle at 50% 30%,#fff7d2,#efbf78 42%,#7598aa 100%)}.celebration.show{display:grid}.celebration h2{font-family:Georgia,serif;font-size:clamp(3.6rem,9vw,8rem);margin:0}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:850px){.grid,.lower{grid-template-columns:1fr}.journey{grid-template-columns:1fr;text-align:center}.journey p{text-align:center}}
+@media(max-width:560px){.shell{width:calc(100% - 18px);padding-top:20px}.hero{padding:24px 8px 20px}h1{font-size:3.4rem}.stage,.panel,.journey{padding:19px}.stage-top{display:block}.status{display:inline-block;margin-top:12px}.countdown{gap:8px}.unit{padding:16px 5px}.num{font-size:2.6rem}.dreams{grid-template-columns:1fr}.actions button{width:100%}.stats{grid-template-columns:1fr 1fr 1fr}.stat strong{font-size:1.35rem}}
+@media print{.scene,.actions,.bucket-add{display:none}.card{box-shadow:none;background:#fff;border:1px solid #ddd}.shell{width:100%;padding:0}}
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="sun"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div>
+  <div class="sparkle" style="top:16%;left:18%"></div><div class="sparkle" style="top:22%;left:78%;animation-delay:1s"></div><div class="sparkle" style="top:30%;left:64%;animation-delay:2s"></div>
+  <div class="mountains"></div>
+</div>
+
+<main class="shell">
+<section class="hero">
+  <div class="eyebrow">Allison &amp; Brian</div>
+  <h1>The Next Chapter</h1>
+  <p class="subtitle">Every day brings us one step closer to the life we have been building together.</p>
+  <div class="pill">🌅 Final destination: April 1, 2030</div>
+  <div class="actions">
+    <button class="primary" onclick="sharePage()">Share with Brian</button>
+    <button class="secondary" onclick="window.print()">Print or Save as PDF</button>
+  </div>
+</section>
+
+<section class="grid">
+  <article class="card stage">
+    <div class="stage-top">
+      <div><div class="label">Stage One</div><h2>Building the Runway</h2><div class="range">Today → May 1, 2029</div></div>
+      <div class="status" id="stage1Status">Counting down</div>
+    </div>
+    <div class="countdown">
+      <div class="unit"><div class="num" id="s1y">0</div><span>YEARS</span></div>
+      <div class="unit"><div class="num" id="s1m">0</div><span>MONTHS</span></div>
+      <div class="unit"><div class="num" id="s1d">0</div><span>DAYS</span></div>
+    </div>
+  </article>
+
+  <article class="card stage">
+    <div class="stage-top">
+      <div><div class="label">Stage Two</div><h2>Final Approach</h2><div class="range">May 1, 2029 → April 1, 2030</div></div>
+      <div class="status" id="stage2Status">Waiting in the wings</div>
+    </div>
+    <div class="countdown">
+      <div class="unit"><div class="num" id="s2y">0</div><span>YEARS</span></div>
+      <div class="unit"><div class="num" id="s2m">0</div><span>MONTHS</span></div>
+      <div class="unit"><div class="num" id="s2d">0</div><span>DAYS</span></div>
+    </div>
+  </article>
+</section>
+
+<section class="card journey">
+  <div class="ring" id="ring"><div class="ring-copy"><div class="ring-value" id="progressText">0.0%</div><div class="ring-label">JOURNEY COMPLETE</div></div></div>
+  <div>
+    <h3>Your Journey</h3>
+    <p id="journeyMessage">You are building the runway now. May 1, 2029 begins the final approach.</p>
+    <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+    <div class="stats">
+      <div class="stat"><strong id="daysComplete">0</strong><span>Days completed</span></div>
+      <div class="stat"><strong id="daysRemaining">0</strong><span>Mornings remaining</span></div>
+      <div class="stat"><strong id="nextMilestone">—</strong><span>Next milestone</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="lower">
+  <article class="card panel">
+    <div class="label">Daily Inspiration</div>
+    <div class="quote" id="quote"></div><div class="quote-author" id="quoteAuthor"></div>
+    <h3 class="section-title" style="margin-top:30px">Looking Forward To</h3>
+    <div class="dreams">
+      <div class="dream"><div class="icon">✈️</div><strong>More adventures</strong><span>New places, favorite places, and the freedom to linger.</span></div>
+      <div class="dream"><div class="icon">☕</div><strong>Slow mornings</strong><span>Coffee without a calendar and nowhere we have to rush.</span></div>
+      <div class="dream"><div class="icon">❤️</div><strong>Time together</strong><span>More ordinary days that turn into the best memories.</span></div>
+      <div class="dream"><div class="icon">🥾</div><strong>The open trail</strong><span>A life with room for nature, movement, curiosity, and joy.</span></div>
+    </div>
+  </article>
+
+  <article class="card panel">
+    <div class="label">Milestones Ahead</div>
+    <h3 class="section-title">Moments worth celebrating</h3>
+    <div class="milestone-list" id="milestoneList"></div>
+  </article>
+</section>
+
+<section class="card panel bucket">
+  <div class="bucket-head">
+    <div><div class="label">Retirement Dream Board</div><h3 class="section-title">Our bucket list</h3></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="bucket-add" onclick="resetBucket()">Reset list</button><button class="bucket-add" onclick="addBucket()">+ Add dream</button></div>
+  </div>
+  <div class="bucket-list" id="bucketList"></div>
+</section>
+
+<div class="footer">Made with love for Allison &amp; Brian • The page changes with the seasons and updates every day.</div>
+</main>
+
+<section class="celebration" id="celebration"><div><div style="font-size:4rem">🎉 🌅 🥂</div><h2>The Next Chapter Is Here</h2><p>Allison and Brian, April 1, 2030 has arrived. The runway is behind you. The horizon is yours.</p></div></section>
+<div class="toast" id="toast">Saved</div>
+
+<script>
+const STAGE_TWO=new Date(2029,4,1),RETIREMENT=new Date(2030,3,1),JOURNEY_START=new Date(2026,0,1);
+const sod=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
+function applySeason(){const m=new Date().getMonth();document.body.classList.add(m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter")}
+function diff(from,to){from=sod(from);to=sod(to);if(to<=from)return{years:0,months:0,days:0};let y=to.getFullYear()-from.getFullYear(),c=new Date(from);c.setFullYear(c.getFullYear()+y);if(c>to){y--;c=new Date(from);c.setFullYear(c.getFullYear()+y)}let m=(to.getFullYear()-c.getFullYear())*12+to.getMonth()-c.getMonth(),mc=new Date(c);mc.setMonth(mc.getMonth()+m);if(mc>to){m--;mc=new Date(c);mc.setMonth(mc.getMonth()+m)}return{years:y,months:m,days:Math.round((to-mc)/86400000)}}
+const days=(a,b)=>Math.max(0,Math.ceil((sod(b)-sod(a))/86400000));
+function setC(p,d){document.getElementById(p+"y").textContent=d.years;document.getElementById(p+"m").textContent=d.months;document.getElementById(p+"d").textContent=d.days}
+function update(){const t=sod(new Date());if(t>=RETIREMENT){celebration.classList.add("show");return}if(t<STAGE_TWO){setC("s1",diff(t,STAGE_TWO));setC("s2",diff(STAGE_TWO,RETIREMENT))}else{setC("s1",{years:0,months:0,days:0});setC("s2",diff(t,RETIREMENT));stage1Status.textContent="Complete";stage2Status.textContent="Now underway";journeyMessage.textContent="The final approach has begun. April 1, 2030 is now in clear view."}const total=days(JOURNEY_START,RETIREMENT),complete=Math.min(total,days(JOURNEY_START,t)),remain=days(t,RETIREMENT),p=Math.max(0,Math.min(100,complete/total*100));ring.style.setProperty("--p",p.toFixed(2));progressText.textContent=p.toFixed(1)+"%";barFill.style.width=p+"%";daysComplete.textContent=complete.toLocaleString();daysRemaining.textContent=remain.toLocaleString();const checks=[1000,750,500,365,250,100,50,30,10,1],next=checks.find(n=>remain>n);nextMilestone.textContent=next?next+" days":"Retirement day"}
+const quotes=[["The best is yet to come.","Frank Sinatra"],["A beautiful life is built one meaningful day at a time.","The Next Chapter"],["The horizon is not the end. It is an invitation.","The Next Chapter"],["There are years that ask questions and years that answer.","Zora Neale Hurston"],["Adventure is worthwhile in itself.","Amelia Earhart"],["The future belongs to those who believe in the beauty of their dreams.","Eleanor Roosevelt"],["The years ahead are not an ending. They are a widening.","The Next Chapter"]];
+function setQuote(){const q=quotes[Math.floor(Date.now()/86400000)%quotes.length];quote.textContent="“"+q[0]+"”";quoteAuthor.textContent="— "+q[1]}
+function milestones(){const arr=[["1,000 days to go",new Date(2027,6,6)],["Stage Two begins",STAGE_TWO],["One year remaining",new Date(2029,3,1)],["100 days to go",new Date(2029,11,22)],["First no-alarm morning",RETIREMENT]],t=sod(new Date());milestoneList.innerHTML="";arr.forEach(([l,d])=>{const e=document.createElement("div");e.className="milestone";const done=d<t;e.innerHTML='<div class="dot"></div><div><strong>'+(done?"✓ ":"")+l+'</strong><span>'+d.toLocaleDateString(undefined,{month:"long",day:"numeric",year:"numeric"})+'</span></div>';milestoneList.appendChild(e)})}
+const defaults=["Plan a long family weekend together","Book a relaxing beach escape","Rent an apartment in Greece","Travel through Europe","Enjoy lazy mornings"];
+const BUCKET_VERSION="2";
+function loadBucket(){
+  const savedVersion=localStorage.getItem("nextChapterBucketVersion");
+  if(savedVersion!==BUCKET_VERSION){
+    const fresh=defaults.map(x=>({text:x,done:false}));
+    localStorage.setItem("nextChapterBucket",JSON.stringify(fresh));
+    localStorage.setItem("nextChapterBucketVersion",BUCKET_VERSION);
+    return fresh;
+  }
+  return JSON.parse(localStorage.getItem("nextChapterBucket")||"null")||defaults.map(x=>({text:x,done:false}));
+}
+function resetBucket(){
+  if(!confirm("Reset the bucket list to the original five dreams?")) return;
+  const fresh=defaults.map(x=>({text:x,done:false}));
+  localStorage.setItem("nextChapterBucket",JSON.stringify(fresh));
+  localStorage.setItem("nextChapterBucketVersion",BUCKET_VERSION);
+  renderBucket();
+  showToast();
+}
+function saveBucket(items){localStorage.setItem("nextChapterBucket",JSON.stringify(items));showToast()}
+function renderBucket(){const items=loadBucket();bucketList.innerHTML="";items.forEach((item,i)=>{const row=document.createElement("label");row.className="bucket-item"+(item.done?" done":"");row.innerHTML='<input type="checkbox" '+(item.done?"checked":"")+'><span class="bucket-text">'+escapeHtml(item.text)+'</span>';row.querySelector("input").onchange=e=>{items[i].done=e.target.checked;saveBucket(items);renderBucket()};row.ondblclick=()=>editBucket(i);bucketList.appendChild(row)})}
+function addBucket(){const text=prompt("What dream would you like to add?");if(!text)return;const items=loadBucket();items.push({text,done:false});saveBucket(items);renderBucket()}
+function editBucket(i){const items=loadBucket(),text=prompt("Edit this dream:",items[i].text);if(text===null)return;if(text.trim()==="")items.splice(i,1);else items[i].text=text.trim();saveBucket(items);renderBucket()}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+function showToast(){toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1200)}
+async function sharePage(){try{if(navigator.share)await navigator.share({title:"The Next Chapter — Allison & Brian",text:"Our countdown to April 1, 2030.",url:location.href});else{await navigator.clipboard.writeText(location.href);alert("The link has been copied.")}}catch(e){}}
+applySeason();update();setQuote();milestones();renderBucket();
+</script>
+</body>
+</html>

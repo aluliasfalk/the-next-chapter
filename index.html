@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d88a3d" />
+  <title>The Next Chapter — Allison & Brian</title>
+  <style>
+    :root{--ink:#183247;--muted:#617486;--gold:#d88a3d;--gold2:#f2b55f;--deep:#2f6079;--card:rgba(255,255,255,.82);--line:rgba(24,50,71,.12);--shadow:0 24px 70px rgba(27,57,79,.16)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 14% 10%,rgba(255,219,156,.70),transparent 31%),radial-gradient(circle at 87% 4%,rgba(168,217,240,.74),transparent 30%),linear-gradient(180deg,#fff5df 0%,#d9edf7 48%,#8abbd3 100%);background-attachment:fixed;transition:background 1s ease}
+    body.stage-two{background:radial-gradient(circle at 18% 8%,rgba(255,255,255,.70),transparent 24%),linear-gradient(180deg,#dff5ff 0%,#93cee9 48%,#478aae 100%)}
+    body.complete{background:radial-gradient(circle at 50% 18%,rgba(255,235,177,.84),transparent 27%),linear-gradient(180deg,#ffd77e 0%,#f29c58 43%,#4d8092 71%,#214e60 100%)}
+    .page{max-width:1120px;margin:0 auto;padding:28px 18px 46px}.hero{text-align:center;padding:28px 18px 22px}
+    .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;font-weight:800;color:var(--deep)}
+    h1{margin:.45rem 0 .25rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.8rem,7vw,5.8rem);line-height:.95;font-weight:500}
+    .subtitle{max-width:720px;margin:.8rem auto 0;color:var(--muted);font-size:clamp(1rem,2.2vw,1.25rem)}
+    .pill{display:inline-flex;gap:.55rem;align-items:center;margin-top:1.15rem;padding:.75rem 1.05rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.7);backdrop-filter:blur(12px);font-weight:800}
+    .actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+    button{border:0;border-radius:999px;padding:.82rem 1.05rem;font-weight:800;cursor:pointer;font-size:.95rem}.primary{background:var(--ink);color:#fff}.secondary{background:rgba(255,255,255,.78);color:var(--ink);border:1px solid var(--line)}
+    .tiny{font-size:.78rem;color:var(--muted);margin-top:.55rem;min-height:1em}.grid{display:grid;gap:18px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.75);border-radius:26px;box-shadow:var(--shadow);backdrop-filter:blur(15px);padding:24px}
+    .stage-card{position:relative;overflow:hidden}.stage-card:after{content:"";position:absolute;right:-62px;top:-62px;width:168px;height:168px;border-radius:50%;background:rgba(216,138,61,.10)}
+    .stage-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:22px}.kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--gold)}
+    .stage-title{font-family:Georgia,"Times New Roman",serif;font-size:1.7rem;margin:.2rem 0 .28rem}.range{color:var(--muted);font-size:.94rem}.status{padding:.48rem .76rem;border-radius:999px;background:#f7e7cd;color:#8b4f10;font-weight:800;font-size:.8rem;white-space:nowrap}
+    .countdown{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.timebox{text-align:center;padding:18px 8px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.70)}
+    .value{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,5vw,3.5rem);line-height:1}.label{margin-top:.45rem;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}.dim{opacity:.68}
+    .progress-card{display:grid;grid-template-columns:230px 1fr;gap:30px;align-items:center}.ring{width:194px;height:194px;border-radius:50%;display:grid;place-items:center;margin:auto;position:relative;background:conic-gradient(var(--gold) 0deg,rgba(255,255,255,.55) 0deg)}
+    .ring:before{content:"";position:absolute;inset:14px;border-radius:50%;background:rgba(255,255,255,.91)}.ring-content{position:relative;text-align:center}.percent{font-family:Georgia,"Times New Roman",serif;font-size:2.8rem}.smallcaps{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+    .section-title{font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;margin:0 0 14px}.bar{height:12px;border-radius:999px;background:rgba(255,255,255,.62);overflow:hidden;border:1px solid var(--line)}.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:999px;transition:width .6s ease}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}.stat{border-top:1px solid var(--line);padding-top:12px}.stat strong{display:block;font-size:1.42rem}.stat span{color:var(--muted);font-size:.84rem}
+    .dreams{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.dream{text-align:center;padding:15px 7px;border-radius:16px;background:rgba(255,255,255,.64);border:1px solid var(--line)}.dream .icon{font-size:1.62rem}.dream span{display:block;margin-top:.42rem;color:var(--muted);font-size:.84rem}
+    blockquote{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.35rem,3vw,2rem);line-height:1.35}.milestone{margin-top:16px;padding:14px 16px;border-left:4px solid var(--gold);background:rgba(247,231,205,.56);border-radius:12px}.footer{text-align:center;padding-top:22px;color:rgba(24,50,71,.72);font-family:Georgia,"Times New Roman",serif}
+    @media(max-width:840px){.two{grid-template-columns:1fr}.progress-card{grid-template-columns:1fr}.dreams{grid-template-columns:repeat(3,1fr)}}@media(max-width:520px){.page{padding:18px 12px 34px}.card{padding:18px;border-radius:21px}.countdown{gap:8px}.timebox{padding:14px 4px}.stats{grid-template-columns:1fr}.dreams{grid-template-columns:repeat(2,1fr)}.stage-head{flex-direction:column}}@media print{body{background:#fff}.actions,.tiny{display:none}.card{box-shadow:none;border:1px solid #ddd}}
+  </style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">Allison & Brian</div>
+    <h1 id="mainTitle">The Next Chapter</h1>
+    <p class="subtitle" id="subtitle">Every day brings us one step closer to the life we have been building together.</p>
+    <div class="pill">🌅 Final destination: April 1, 2030</div>
+    <div class="actions"><button class="primary" id="shareBtn">Share with Brian</button><button class="secondary" id="printBtn">Print or Save as PDF</button></div>
+    <div class="tiny" id="shareNote"></div>
+  </header>
+
+  <section class="grid two">
+    <article class="card stage-card" id="stage1Card">
+      <div class="stage-head"><div><div class="kicker">Stage One</div><h2 class="stage-title">Building the Runway</h2><div class="range">Today → May 1, 2029</div></div><div class="status" id="stage1Status">Counting down</div></div>
+      <div class="countdown"><div class="timebox"><div class="value" id="s1Years">2</div><div class="label">Years</div></div><div class="timebox"><div class="value" id="s1Months">9</div><div class="label">Months</div></div><div class="timebox"><div class="value" id="s1Days">10</div><div class="label">Days</div></div></div>
+    </article>
+
+    <article class="card stage-card dim" id="stage2Card">
+      <div class="stage-head"><div><div class="kicker">Stage Two</div><h2 class="stage-title">Final Approach</h2><div class="range">May 1, 2029 → April 1, 2030</div></div><div class="status" id="stage2Status">Waiting in the wings</div></div>
+      <div class="countdown"><div class="timebox"><div class="value" id="s2Years">0</div><div class="label">Years</div></div><div class="timebox"><div class="value" id="s2Months">11</div><div class="label">Months</div></div><div class="timebox"><div class="value" id="s2Days">0</div><div class="label">Days</div></div></div>
+    </article>
+  </section>
+
+  <section class="card progress-card" style="margin-top:18px">
+    <div class="ring" id="ring"><div class="ring-content"><div class="percent" id="percent">0%</div><div class="smallcaps">Journey complete</div></div></div>
+    <div><h2 class="section-title">Your Journey</h2><p id="journeyMessage" style="margin-top:0;color:var(--muted)">One thoughtful day at a time.</p><div class="bar"><div class="bar-fill" id="barFill"></div></div><div class="stats"><div class="stat"><strong id="daysCompleted">0</strong><span>Days completed</span></div><div class="stat"><strong id="daysRemaining">0</strong><span>Days remaining</span></div><div class="stat"><strong id="nextMilestone">—</strong><span>Next milestone</span></div></div></div>
+  </section>
+
+  <section class="grid two" style="margin-top:18px">
+    <article class="card"><h2 class="section-title">Looking Forward To</h2><div class="dreams"><div class="dream"><div class="icon">✈️</div><span>Travel</span></div><div class="dream"><div class="icon">👨‍👩‍👦</div><span>Family</span></div><div class="dream"><div class="icon">⛳</div><span>Golf</span></div><div class="dream"><div class="icon">📚</div><span>Reading</span></div><div class="dream"><div class="icon">☕</div><span>Slow mornings</span></div><div class="dream"><div class="icon">❤️</div><span>Giving back</span></div></div></article>
+    <article class="card"><h2 class="section-title">Today’s Inspiration</h2><blockquote id="quote">“Every day is one step closer.”</blockquote><div class="milestone" id="milestoneMessage">Your next milestone is getting closer.</div></article>
+  </section>
+
+  <footer class="footer"><strong>The Next Chapter</strong><br/>One day at a time.</footer>
+</main>
+<script>
+const START=new Date(2026,6,21),STAGE1=new Date(2029,4,1),FINAL=new Date(2030,3,1);
+const quotes=["Every day is one step closer.","The best chapters are still unwritten.","Freedom is built long before it is lived.","You are not counting down from work; you are counting up to possibility.","The future is something you have been building, one day at a time.","Small, steady choices create extraordinary freedom.","The finish line is also a beautiful new beginning.","You have already traveled farther than you realize.","A meaningful next chapter begins with the life you choose to make room for.","Someday is becoming a date on the calendar."];
+const sod=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
+function addMonthsClamped(date,months){const d=new Date(date.getFullYear(),date.getMonth(),1);d.setMonth(d.getMonth()+months);const last=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();d.setDate(Math.min(date.getDate(),last));return d}
+function diff(from,to){from=sod(from);to=sod(to);if(to<=from)return{years:0,months:0,days:0};let years=to.getFullYear()-from.getFullYear();let cur=new Date(from);cur.setFullYear(cur.getFullYear()+years);if(cur>to){years--;cur=new Date(from);cur.setFullYear(cur.getFullYear()+years)}let months=(to.getFullYear()-cur.getFullYear())*12+(to.getMonth()-cur.getMonth());let mc=addMonthsClamped(cur,months);if(mc>to){months--;mc=addMonthsClamped(cur,months)}return{years,months,days:Math.round((to-mc)/86400000)}}
+const days=(a,b)=>Math.max(0,Math.round((sod(b)-sod(a))/86400000));
+function set(prefix,d){document.getElementById(prefix+"Years").textContent=d.years;document.getElementById(prefix+"Months").textContent=d.months;document.getElementById(prefix+"Days").textContent=d.days}
+function nextMark(r){for(const m of [1000,500,365,100,30]){if(r>m)return m.toLocaleString()+" days";if(r===m)return m.toLocaleString()+" days — today!"}return r>0?r+" days":"Today"}
+function update(){const today=sod(new Date()),total=days(START,FINAL),elapsed=Math.min(total,days(START,today)),remaining=days(today,FINAL),pct=Math.max(0,Math.min(100,elapsed/total*100));document.getElementById("percent").textContent=pct.toFixed(1)+"%";document.getElementById("daysCompleted").textContent=elapsed.toLocaleString();document.getElementById("daysRemaining").textContent=remaining.toLocaleString();document.getElementById("nextMilestone").textContent=nextMark(remaining);document.getElementById("barFill").style.width=pct+"%";document.getElementById("ring").style.background=`conic-gradient(var(--gold) ${pct*3.6}deg,rgba(255,255,255,.55) 0deg)`;document.getElementById("quote").textContent="“"+quotes[Math.floor(today.getTime()/86400000)%quotes.length]+"”";
+if(today<STAGE1){set("s1",diff(today,STAGE1));set("s2",diff(STAGE1,FINAL));document.getElementById("journeyMessage").textContent="You are building the runway now. May 1, 2029 begins the final approach.";document.getElementById("milestoneMessage").textContent=days(today,STAGE1).toLocaleString()+" days until Stage One is complete."}
+else if(today<FINAL){set("s1",{years:0,months:0,days:0});set("s2",diff(today,FINAL));document.getElementById("stage1Status").textContent="Complete ✓";document.getElementById("stage2Status").textContent="Final approach";document.getElementById("stage1Card").classList.add("dim");document.getElementById("stage2Card").classList.remove("dim");document.body.classList.add("stage-two");document.getElementById("journeyMessage").textContent="Stage One is complete. You are officially in the home stretch.";document.getElementById("milestoneMessage").textContent=remaining.toLocaleString()+" days until The Next Chapter begins."}
+else{set("s1",{years:0,months:0,days:0});set("s2",{years:0,months:0,days:0});document.body.classList.add("complete");document.getElementById("mainTitle").textContent="Welcome to Your Next Chapter";document.getElementById("subtitle").textContent="You planned, invested, worked with purpose, and built this life together. Now it is time to enjoy it.";document.getElementById("journeyMessage").textContent="The countdown is complete. The next chapter is here.";document.getElementById("milestoneMessage").textContent="April 1, 2030 has arrived. Congratulations, Allison and Brian!"}}
+document.getElementById("printBtn").onclick=()=>window.print();
+document.getElementById("shareBtn").onclick=async()=>{const note=document.getElementById("shareNote");try{if(navigator.share){await navigator.share({title:"The Next Chapter",text:"Our countdown to April 1, 2030.",url:location.href});note.textContent="Shared!"}else{await navigator.clipboard.writeText(location.href);note.textContent="Website link copied."}}catch(e){note.textContent="Copy the website address from Safari and send it to Brian."}};
+update();setInterval(update,60000);
+</script>
+</body>
+</html>

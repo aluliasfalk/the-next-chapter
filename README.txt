@@ -1,30 +1,18 @@
-THE NEXT CHAPTER — FINAL KEEPSAKE EDITION
+THE NEXT CHAPTER — MODERN MULTI-PAGE APP
 
-This is the completed edition.
+Correct wedding date: October 21, 2000.
 
 UPLOAD
-Upload every file in this folder to the main/root area of the same GitHub repository.
-Do not delete the existing files first. Let GitHub replace matching files.
+1. Unzip this package.
+2. Upload every file and the complete assets folder to the root of the GitHub repository.
+3. Allow GitHub to replace matching files.
+4. Commit changes and wait approximately 2–5 minutes.
 
-FINAL FEATURES
-- Custom sunrise-and-horizon logo
-- Matching custom phone app icon
-- Cinematic opening screen
-- Interactive family timeline
-- Travel dreams gallery
-- Family memory vault
-- Seasonal visual accents
-- Retirement countdown and milestone dashboard
-- Offline support
-- Share and Add to Phone tools
-- Full-screen installable app for iPhone, iPad, Android, and desktop
-- Improved photo positioning and mobile design
+Your public link does not change:
+https://aluliasfalk.github.io/the-next-chapter/
 
-INSTALL ON IPHONE
-1. Open the published website in Safari.
-2. Tap Share.
-3. Choose Add to Home Screen.
-4. Tap Add.
+IPHONE
+Remove the old Home Screen icon after the update publishes. Open the website in Safari, tap Share, Add to Home Screen, then Add.
 
-After uploading, wait 1–2 minutes and refresh the website.
-If an older installed version appears, close it fully and reopen it. If necessary, remove the old icon and add it again.
+SOUND
+The music-note button provides an optional gentle ambient sound and is off by default. A personal song can be added later if you provide an MP3 you own or have permission to use.

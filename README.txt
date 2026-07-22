@@ -1,18 +1,29 @@
-THE NEXT CHAPTER — MODERN MULTI-PAGE APP
+THE NEXT CHAPTER — RELIABLE APP EDITION
 
-Correct wedding date: October 21, 2000.
+WHY THIS VERSION
+This edition eliminates the causes of the 404 errors:
+- Timeline, Travel, Memories, Story and Countdown are all inside index.html.
+- Every personal photograph is embedded directly into index.html.
+- There is no assets folder to upload.
+- Navigation uses reliable in-app sections rather than separate page files.
 
 UPLOAD
 1. Unzip this package.
-2. Upload every file and the complete assets folder to the root of the GitHub repository.
-3. Allow GitHub to replace matching files.
-4. Commit changes and wait approximately 2–5 minutes.
+2. Upload ALL seven files to the main/root area of the GitHub repository.
+3. Replace matching files.
+4. IMPORTANT: Delete these old files from GitHub if they remain:
+   timeline.html
+   travel.html
+   story.html
+   memories.html
+   countdown.html
+   partials.tmp
+5. Commit the changes.
+6. Wait 2–5 minutes and refresh.
 
-Your public link does not change:
+Your website address remains:
 https://aluliasfalk.github.io/the-next-chapter/
 
 IPHONE
-Remove the old Home Screen icon after the update publishes. Open the website in Safari, tap Share, Add to Home Screen, then Add.
-
-SOUND
-The music-note button provides an optional gentle ambient sound and is off by default. A personal song can be added later if you provide an MP3 you own or have permission to use.
+After the new version appears, remove the existing Home Screen icon and add it again:
+Safari > Share > Add to Home Screen.

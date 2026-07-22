@@ -4,17 +4,37 @@ const RETIREMENT=new Date(2030,3,1);
 const MS_DAY=86400000;
 const daysBetween=(a,b)=>Math.max(0,Math.ceil((b-a)/MS_DAY));
 function fullYears(from,to){let y=to.getFullYear()-from.getFullYear();if(new Date(to.getFullYear(),from.getMonth(),from.getDate())>to)y--;return y}
+function calendarDifference(from,to){
+  if(from>=to)return {years:0,months:0,days:0};
+  let years=to.getFullYear()-from.getFullYear();
+  let months=to.getMonth()-from.getMonth();
+  let days=to.getDate()-from.getDate();
+  if(days<0){
+    months--;
+    days+=new Date(to.getFullYear(),to.getMonth(),0).getDate();
+  }
+  if(months<0){
+    years--;
+    months+=12;
+  }
+  return {years,months,days};
+}
 function updateStats(){
   const now=new Date();
   document.querySelectorAll('[data-years-married]').forEach(el=>el.textContent=fullYears(WEDDING,now));
   document.querySelectorAll('[data-days-together]').forEach(el=>el.textContent=daysBetween(WEDDING,now).toLocaleString());
   document.querySelectorAll('[data-days-retirement]').forEach(el=>el.textContent=daysBetween(now,RETIREMENT).toLocaleString());
-  let y=RETIREMENT.getFullYear()-now.getFullYear(),m=RETIREMENT.getMonth()-now.getMonth(),d=RETIREMENT.getDate()-now.getDate();
-  if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth()+1,0).getDate()}
-  if(m<0){y--;m+=12}
-  document.querySelectorAll('[data-count-years]').forEach(el=>el.textContent=Math.max(0,y));
-  document.querySelectorAll('[data-count-months]').forEach(el=>el.textContent=Math.max(0,m));
-  document.querySelectorAll('[data-count-days]').forEach(el=>el.textContent=Math.max(0,d));
+  const STAGE_ONE_END=new Date(2029,4,1);
+  const stage1=calendarDifference(now,STAGE_ONE_END);
+  const stage2=calendarDifference(STAGE_ONE_END,RETIREMENT);
+
+  document.querySelectorAll('[data-stage1-years]').forEach(el=>el.textContent=stage1.years);
+  document.querySelectorAll('[data-stage1-months]').forEach(el=>el.textContent=stage1.months);
+  document.querySelectorAll('[data-stage1-days]').forEach(el=>el.textContent=stage1.days);
+
+  document.querySelectorAll('[data-stage2-years]').forEach(el=>el.textContent=stage2.years);
+  document.querySelectorAll('[data-stage2-months]').forEach(el=>el.textContent=stage2.months);
+  document.querySelectorAll('[data-stage2-days]').forEach(el=>el.textContent=stage2.days);
 }
 function showRoute(){
   const requested=(location.hash||'#home').slice(1);

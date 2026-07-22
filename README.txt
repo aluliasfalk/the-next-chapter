@@ -1,6 +1,7 @@
 THE NEXT CHAPTER — VERSION 6.0
 
 WHY THIS IS THE PERMANENT EDITION
+- Two separate countdowns: Stage One and Stage Two.
 - One reliable app page; Timeline, Travel, Story, Memories and Countdown cannot create 404 page errors.
 - Photos are separate normal files for faster loading.
 - Every file is in the repository root—there are no nested folders to miss during upload.

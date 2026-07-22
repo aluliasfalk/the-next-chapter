@@ -1,0 +1,4 @@
+const CACHE='next-chapter-v6';const ASSETS=["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./photo-1.jpg", "./photo-2.jpg", "./photo-3.jpg", "./photo-4.jpg", "./photo-5.jpg", "./photo-6.jpg", "./photo-7.jpg", "./photo-8.jpg"];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));self.skipWaiting()});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))))});

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102f48">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Next Chapter">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<title>The Next Chapter — Allison & Brian</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="site-header">
+  <a class="brand" href="#home" data-route="home" aria-label="The Next Chapter home">
+    <svg class="sunlogo" viewBox="0 0 120 90" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round"><path d="M25 52a35 35 0 0 1 70 0"/><path d="M15 59c18-11 32-11 46 0s28 11 44 0"/><path d="M18 70c15-8 28-8 42 0s28 8 43 0"/><path d="M60 5v10M25 18l7 8M95 18l-7 8M8 43h12M100 43h12"/></g></svg>
+    <span><b>THE NEXT<br>CHAPTER</b><small>OUR BEST ADVENTURE</small></span>
+  </a>
+  <nav class="desktop-nav">
+    <a href="#home" data-route="home">Home</a>
+    <a href="#story" data-route="story">Our Story</a>
+    <a href="#timeline" data-route="timeline">Timeline</a>
+    <a href="#travel" data-route="travel">Travel</a>
+    <a href="#memories" data-route="memories">Memories</a>
+    <a href="#countdown" data-route="countdown">Countdown</a>
+  </nav>
+  <div class="header-actions">
+    <button id="soundBtn" aria-label="Toggle ambient music" title="Ambient music">♫</button>
+    <button id="shareBtn" aria-label="Share this app" title="Share">↗</button>
+    <button id="menuBtn" class="mobile-only" aria-label="Open navigation">☰</button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="#home" data-route="home">Home</a>
+  <a href="#story" data-route="story">Our Story</a>
+  <a href="#timeline" data-route="timeline">Timeline</a>
+  <a href="#travel" data-route="travel">Travel</a>
+  <a href="#memories" data-route="memories">Memories</a>
+  <a href="#countdown" data-route="countdown">Countdown</a>
+</nav>
+
+<main>
+<section class="route active" data-page="home">
+  <section class="hero" style="background-image:linear-gradient(90deg,rgba(7,29,46,.82),rgba(7,29,46,.14)),url('photo-1.jpg')">
+    <div class="hero-copy">
+      <span class="eyebrow">ALLISON & BRIAN</span>
+      <h1>The Next Chapter</h1>
+      <p>A lifetime of memories. A future full of adventures.</p>
+      <a class="button" href="#story" data-route="story">Begin our story</a>
+    </div>
+    <aside class="hero-count">
+      <b data-days-retirement>—</b>
+      <span>days until retirement</span>
+      <small>April 1, 2030</small>
+    </aside>
+  </section>
+
+  <section class="stats-band">
+    <div><b data-years-married>—</b><span>Years Married</span><small>Since October 21, 2000</small></div>
+    <div><b data-days-together>—</b><span>Days Together</span><small>And counting…</small></div>
+    <div><b data-days-retirement>—</b><span>Days to Retirement</span><small>April 1, 2030</small></div>
+  </section>
+
+  <section class="section intro">
+    <div class="section-heading">
+      <span class="eyebrow gold">OUR WHY</span>
+      <h2>More time for us, our family, and the world still waiting.</h2>
+      <p>We built a beautiful life in the busy years. This next chapter is about slowing down enough to truly enjoy it.</p>
+    </div>
+    <div class="link-cards">
+      <a href="#timeline" data-route="timeline"><span>01</span><b>Our Timeline</b><small>Explore the journey</small></a>
+      <a href="#travel" data-route="travel"><span>02</span><b>Travel Dreams</b><small>Places still calling</small></a>
+      <a href="#memories" data-route="memories"><span>03</span><b>Memory Vault</b><small>Photos and stories</small></a>
+    </div>
+  </section>
+</section>
+
+<section class="route" data-page="story">
+  <section class="page-head">
+    <span class="eyebrow gold">CHAPTER ONE</span>
+    <h1>Where It All Began</h1>
+    <p>It all started on <strong>October 21, 2000</strong>—a beautiful day and the beginning of our greatest adventure.</p>
+  </section>
+  <section class="section">
+    <div class="wedding-grid">
+      <figure class="wedding-card tall"><img src="photo-3.jpg" alt="Allison and Brian on their wedding day" class="face-safe wedding-close" loading="lazy" decoding="async"><figcaption><h3>Where our story began</h3><p>A promise, a partnership, and a lifetime ahead.</p></figcaption></figure>
+      <figure class="wedding-card medium"><img src="photo-7.jpg" alt="Allison and Brian walking on their wedding day" class="face-safe wedding-walk" loading="lazy" decoding="async"><figcaption><h3>The first steps</h3><p>Together from the very beginning.</p></figcaption></figure>
+      <figure class="wedding-card medium"><img src="photo-1.jpg" alt="Allison and Brian together at sunset" class="face-safe sunset-couple" loading="lazy" decoding="async"><figcaption><h3>Still choosing adventure</h3><p>And still looking toward the horizon.</p></figcaption></figure>
+    </div>
+    <blockquote>“The best decision we ever made.”</blockquote>
+  </section>
+</section>
+
+<section class="route" data-page="timeline">
+  <section class="page-head">
+    <span class="eyebrow gold">OUR TIMELINE</span>
+    <h1>A Life Built Together</h1>
+    <p>The milestones were wonderful. The days between them made the life.</p>
+  </section>
+  <section class="section timeline-list">
+    <article><img src="photo-7.jpg" alt="Wedding day" class="" loading="lazy" decoding="async"><div><small>October 21, 2000</small><h3>We said “I do”</h3><p>A wedding day that began everything.</p></div></article>
+    <article><img src="photo-6.jpg" alt="The boys as children" class="" loading="lazy" decoding="async"><div><small>The Boys</small><h3>Our family grew</h3><p>Andrew and Michael became the heart of our home.</p></div></article>
+    <article><img src="photo-4.jpg" alt="Family holiday memory" class="" loading="lazy" decoding="async"><div><small>The Busy Years</small><h3>School, sports and traditions</h3><p>The ordinary days became the memories we treasure.</p></div></article>
+    <article><img src="photo-5.jpg" alt="Family together" class="" loading="lazy" decoding="async"><div><small>Milestones</small><h3>College and careers</h3><p>Watching two remarkable young men begin their own chapters.</p></div></article>
+    <article><img src="photo-2.jpg" alt="Family trip to Greece" class="" loading="lazy" decoding="async"><div><small>Adventures</small><h3>Exploring together</h3><p>Greece, sunsets, laughter and places still ahead.</p></div></article>
+    <article><img src="photo-1.jpg" alt="Allison and Brian at sunset" class="" loading="lazy" decoding="async"><div><small>April 1, 2030</small><h3>Retirement</h3><p>A new rhythm begins.</p></div></article>
+  </section>
+</section>
+
+<section class="route" data-page="travel">
+  <section class="page-head">
+    <span class="eyebrow gold">DREAMING AHEAD</span>
+    <h1>Places Still Calling Us</h1>
+    <p>Some plans are specific. Others are simply invitations to keep exploring.</p>
+  </section>
+  <section class="section">
+    <div class="travel-hero">
+      <img src="photo-2.jpg" alt="Family sunset in Greece" class="travel-photo" loading="lazy" decoding="async">
+      <div><h3>Live in Greece—long enough to feel at home.</h3><p>Slow mornings, beautiful views, long dinners and nowhere we need to rush.</p></div>
+    </div>
+    <div class="dream-cards">
+      <article><span>🇬🇷</span><h3>Greece</h3><p>Return often—and someday stay awhile.</p></article>
+      <article><span>🇪🇺</span><h3>Europe</h3><p>Train rides, old cities and unhurried exploration.</p></article>
+      <article><span>🏝️</span><h3>Beach Escapes</h3><p>Warm water and quiet afternoons.</p></article>
+      <article><span>👨‍👩‍👦‍👦</span><h3>Family Trips</h3><p>New traditions and time together.</p></article>
+    </div>
+  </section>
+</section>
+
+<section class="route" data-page="memories">
+  <section class="page-head">
+    <span class="eyebrow gold">MEMORY VAULT</span>
+    <h1>The Things We Never Want to Forget</h1>
+    <p>A living collection that can grow as the next chapter unfolds.</p>
+  </section>
+  <section class="section gallery">
+    <figure><img src="photo-5.jpg" alt="Summer family memory" class="gallery-photo" loading="lazy" decoding="async"><figcaption>Summer together</figcaption></figure>
+    <figure><img src="photo-4.jpg" alt="Family holiday memory" class="gallery-photo" loading="lazy" decoding="async"><figcaption>Family traditions</figcaption></figure>
+    <figure><img src="photo-6.jpg" alt="The boys growing up" class="gallery-photo" loading="lazy" decoding="async"><figcaption>The boys growing up</figcaption></figure>
+    <figure><img src="photo-8.jpg" alt="The brothers together" class="gallery-photo" loading="lazy" decoding="async"><figcaption>Brothers and adventures</figcaption></figure>
+    <figure><img src="photo-3.jpg" alt="Wedding day close-up" class="gallery-photo wedding-close" loading="lazy" decoding="async"><figcaption>The beginning</figcaption></figure>
+    <figure><img src="photo-1.jpg" alt="Allison and Brian at sunset" class="gallery-photo sunset-couple" loading="lazy" decoding="async"><figcaption>Still choosing adventure</figcaption></figure>
+  </section>
+</section>
+
+<section class="route" data-page="countdown">
+  <section class="page-head">
+    <span class="eyebrow gold">RETIREMENT COUNTDOWN</span>
+    <h1>The Road to April 1, 2030</h1>
+    <p>Not an ending—the beginning of a life with more freedom, presence and adventure.</p>
+  </section>
+  <section class="section">
+    <div class="countdown-grid">
+      <div><b data-count-years>—</b><span>Years</span></div>
+      <div><b data-count-months>—</b><span>Months</span></div>
+      <div><b data-count-days>—</b><span>Days</span></div>
+    </div>
+    <div class="stages">
+      <article><span>Stage One</span><h3>Today through May 1, 2029</h3><p>Planning, preparing and imagining the life ahead.</p></article>
+      <article><span>Stage Two</span><h3>May 1, 2029 through April 1, 2030</h3><p>The final countdown—and the excitement of being almost there.</p></article>
+    </div>
+  </section>
+</section>
+</main>
+
+<footer>
+  <svg class="sunlogo" viewBox="0 0 120 90" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round"><path d="M25 52a35 35 0 0 1 70 0"/><path d="M15 59c18-11 32-11 46 0s28 11 44 0"/><path d="M18 70c15-8 28-8 42 0s28 8 43 0"/><path d="M60 5v10M25 18l7 8M95 18l-7 8M8 43h12M100 43h12"/></g></svg>
+  <b>The Next Chapter</b>
+  <span>Allison & Brian · Married October 21, 2000 · Retirement April 1, 2030</span>
+</footer>
+
+<div class="toast" id="toast">Ambient music is on.</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
